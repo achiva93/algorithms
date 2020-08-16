@@ -71,7 +71,36 @@ public class ArraysPlay {
 
         intArray[5] = 0;
 
-        intArray[90] = 8;
-    }
+        //intArray[90] = 8;
 
+
+        int[] Sirdeshiftat = new int[5];
+        Sirdeshiftat[0] = 1;
+        Sirdeshiftat[1] = 2;
+        Sirdeshiftat[2] = 3;
+        Sirdeshiftat[3] = 4;
+        Sirdeshiftat[4] = 5;
+
+        int[] Sirshiftat = new int[Sirdeshiftat.length];
+
+
+        int deCateOriShiftez = 2;
+        for (int k = 0; k <= Sirdeshiftat.length - 1; k++) {
+            int pozitienoua = k - deCateOriShiftez;
+            if (pozitienoua < 0) {
+                pozitienoua = pozitienoua + Sirdeshiftat.length;
+            }
+            Sirshiftat[pozitienoua] = Sirdeshiftat[k];
+        }
+
+        for (int k = 0; k <= Sirdeshiftat.length - 1; k++) {
+            System.out.print(Sirdeshiftat[k] + " ");
+        }
+        System.out.println();
+
+        for (int k = 0; k <= Sirshiftat.length - 1; k++) {
+            System.out.print(Sirshiftat[k] + " ");
+        }
+
+    }
 }
