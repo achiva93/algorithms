@@ -1,5 +1,7 @@
 package com.lseg.teme;
 
+import java.util.Scanner;
+
 public class Tema2 {
 
     public static void main(String[] args) {
@@ -16,6 +18,14 @@ public class Tema2 {
         ex6();
 
         ex7();
+
+        ex8();
+
+        ex3while();
+
+        ex7while();
+
+        ex1switch();
 
     }
 
@@ -125,11 +135,101 @@ public class Tema2 {
 
 
         }
-        for (int i = 0;i<=CateNumerePrimeAmGasit - 1;i++){
-            System.out.print (SirNumerePrime[i] + " ");
+        for (int i = 0; i <= CateNumerePrimeAmGasit - 1; i++) {
+            System.out.print(SirNumerePrime[i] + " ");
         }
+        System.out.println();
+        System.out.println();
 
     }
+
+    public static void ex8() {
+        System.out.println("Exercitiul 8");
+        int[] sirulMeu = {76, 3, 56, 23, 11, 25};
+        int andreea;
+
+        for (int i = 0; i <= sirulMeu.length - 1; i++) {
+            for (int j = 0; j <= sirulMeu.length - 2; j++) {
+                if (sirulMeu[i] <= sirulMeu[j]) {
+                    andreea = sirulMeu[i];
+                    sirulMeu[i] = sirulMeu[j];
+                    sirulMeu[j] = andreea;
+                }
+            }
+        }
+
+        for(int i = 0; i <= sirulMeu.length - 1;i++){
+            System.out.println(sirulMeu[i]);
+        }
+    }
+
+    public static void ex3while() {
+        System.out.println("Exercitiul 3 - While");
+        int sum = 0;
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Introduceti numarul");
+            int numarCitit = scanner.nextInt();
+            if (numarCitit == 0) {
+                System.out.println("Ati introdus 0 --> exit program");
+                break;
+            }
+
+            sum = sum + numarCitit;
+            System.out.println("Suma este " + sum);
+        }
+    }
+    public static void ex7while() {
+        System.out.println("Exercitiul 7 - While");
+        int pin = 1234;
+        int attempt = 0;
+        int incercarimaxime = 3;
+        Scanner scanner = new Scanner(System.in);
+        while (attempt < incercarimaxime) {
+            System.out.println("Introduceti PIN-ul");
+            int numarCitit = scanner.nextInt();
+            if (numarCitit == pin) {
+                System.out.println("PIN corect");
+                break;
+            } else {
+                attempt++;
+                System.out.println("PIN gresit - mai aveti " + (incercarimaxime - attempt) + " incercari");
+            }
+        }
+    }
+
+    public static void ex1switch() {
+        System.out.println("Exercitiul 1 - Switch");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println ("Introduceti o cifra");
+        switch(scanner.nextInt()){
+            case 0:
+                System.out.println("Ziua este duminica");
+                break;
+            case 1:
+                System.out.println("Ziua este luni");
+                break;
+            case 2:
+                System.out.println("Ziua este marti");
+                break;
+            case 3:
+                System.out.println("Ziua este miercuri");
+                break;
+            case 4:
+                System.out.println("Ziua este joi");
+                break;
+            case 5:
+                System.out.println("Ziua este vineri");
+                break;
+            case 6:
+                System.out.println("Ziua este sambata");
+                break;
+            default: System.out.println ("Out of range");
+        }
+    }
+
 }
+
+
 
 
