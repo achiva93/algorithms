@@ -1,4 +1,4 @@
-package com.lseg.teme;
+package com.lseg.teme.Homework2;
 
 import java.util.Scanner;
 
