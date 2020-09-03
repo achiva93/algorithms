@@ -27,5 +27,32 @@ public class Operators {
         System.out.println("test = " + test);
         System.out.println("test = " + test);
 
+        System.out.println(1 + ++a);
+//        a++;
+
+        int b = 5;
+        b = b + 2;
+        //echiv cu
+        b += 2;
+
+        b = b * 2;
+        //echiv cu
+        b *= 2;
+
+    }
+
+    static String printMatchResult(int fcsbScore, int dinamoScore) {
+        //condBooleana ? value : otherValue
+        /*
+        if (fcsbScore >= dinamoScore) {
+            return "Bate FCSB";
+
+        } else {
+            return "Bate Dinamo";
+        }
+         */
+        //operator ternar echivalent
+        String resultingScore = (fcsbScore >= dinamoScore) ? "Bate FCSB" : "Bate Dinamo";
+        return resultingScore;
     }
 }

@@ -1,7 +1,5 @@
 package com.lseg.basic_structures;
 
-import java.util.Arrays;
-
 public class ForEx {
 
 
@@ -9,14 +7,7 @@ public class ForEx {
         //void --> nu returnez nimic
         //daca returnez ceva, tb specificat in definitia functiei
 
-        sum(10);
-        int[] array = new int[]{20, 35, -15, 7, 55, 1, -22};
-
-        int min = findMin(array);
-        System.out.println("Min is: " + min);
-
-        System.out.println(fibonacciRecursive(5));
-        System.out.println(Arrays.toString(fibonacciIterative(10)));
+        cmmdc(24, 36);
     }
 
     static int findMin(int[] array) {
@@ -40,6 +31,7 @@ public class ForEx {
         }
         System.out.println("Sum of array is: " + sum);
         // return sum;
+
     }
 
     static void sumEvenNumbers(int n) { //n - natural
@@ -101,5 +93,75 @@ public class ForEx {
         return fibonacciArray;
     }
 
+    //Integer.parseInt("123");
+    static int parseInt(String strNum) {
+
+        int parsedInt = 0;
+        char[] chars = strNum.toCharArray(); //['1','2','3']
+
+        for (char digit : chars) {
+            parsedInt = parsedInt * 10 + (digit - 48);
+            System.out.print(parsedInt + ", ");
+        }
+        System.out.println("\nparsedInt = " + parsedInt);
+        return parsedInt;
+    }
+
+    //cmmdc
+    static int cmmdc(int first, int second) {
+
+        int div = 1;
+        //a e divizor pt b daca b%a==0
+        for (int i = 1; i <= first && i <= second; i++) {
+            if (first % i == 0 && second % i == 0) {
+                div = i;
+                System.out.println(div);
+            }
+        }
+        System.out.println("Cel mai mare: " + div);
+        return div;
+    }
+
+    //n! = 1*2*3*...*n
+    static int factorial(int n) {
+
+        int factorial = 1;
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        System.out.println("n! = " + factorial);
+        return factorial;
+    }
+
+    static int primesSum(int limit) {
+
+        int sum = 0;
+        for (int i = 1; i <= limit; i++) {
+
+            if (isPrime(i)) {
+                sum += i;
+            }
+//            int contor = 0;
+//            for (int j = 2; j <= i / 2; j++) {
+//                if (i % j == 0) {
+//                    contor++;
+//                }
+//            }
+        }
+
+        return sum;
+    }
+
+    static boolean isPrime(int numberToTestIfIsPrime) {
+
+        boolean isPrime = true;
+        for (int j = 2; j <= numberToTestIfIsPrime / 2; j++) {
+            if (numberToTestIfIsPrime % j == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        return isPrime;
+    }
 
 }
