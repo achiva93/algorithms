@@ -17,6 +17,11 @@ public class WhileEx {
         int[] array = new int[]{20, 35, -15, 7, 55, 1, -22};
         int min = findMin(array);
         System.out.println("min = " + min);
+
+
+        while(true){
+
+        }
     }
 
     static void printNumberDigits(int n) {
