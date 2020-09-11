@@ -73,7 +73,7 @@ public class ForEx {
      *
      * complexity: O(nthElement)
      */
-    static int[] fibonacciIterative(int nthElement) {
+    public static int[] fibonacciIterative(int nthElement) {
 
         int An_2 = 0;
         int An_1 = 1;

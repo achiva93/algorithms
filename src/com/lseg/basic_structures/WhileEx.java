@@ -1,6 +1,5 @@
 package com.lseg.basic_structures;
 
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,20 +7,13 @@ import java.util.List;
 public class WhileEx {
 
     public static void main(String[] args) {
-        // 91289172
-        System.out.println(7 / 2); //3
-        System.out.println(7 / 2.0); //3.5
-        System.out.println(91289172 / 10); //9128917
-        printNumberDigits(91289172);
 
-        int[] array = new int[]{20, 35, -15, 7, 55, 1, -22};
-        int min = findMin(array);
-        System.out.println("min = " + min);
+        int n1 = 24;
+        int n2 = 36;
+        cmmdc(n1, n2);
+        isPalindrom(21121);
+        isPalindrom(32823);
 
-
-        while(true){
-
-        }
     }
 
     static void printNumberDigits(int n) {
@@ -73,4 +65,73 @@ public class WhileEx {
         }
         return min;
     }
+
+    /**
+     * Euclid
+     * 1 --> n2 > n1 then n2 = 36 - 24 =12
+     * n1 = 24;
+     * n2 = 12;
+     * 2 -->   n1 > n2 then n1 = 24 -12 = 12
+     * n1==n2==12
+     */
+    static int cmmdc(int n1, int n2) {
+
+        System.out.print("Cmmdc dintre " + n1 + " si " + n2 + " este: ");
+        while (n1 != n2) {
+            if (n1 > n2) {
+                n1 = n1 - n2;
+            } else {
+                n2 = n2 - n1;
+            }
+        }
+        System.out.println(n1);
+        return n1;
+    }
+
+    /**
+     * Palindrom is a number equal with its reverse
+     * EX: 32823, 7887
+     */
+    static boolean isPalindrom(int n) {
+
+        int reverse = 0;
+        int temp = n;
+
+        while (n != 0) {
+            int digit = n % 10;
+//          n=n/10;
+            n /= 10;
+            reverse = reverse * 10 + digit;
+        }
+        boolean isPalindrom = reverse == temp;
+        System.out.println(temp + " is palindrom: " + isPalindrom);
+        return isPalindrom;
+    }
+
+
+    /**
+     * static void sum(int n) { //n - natural
+     * int sum = 0;
+     *
+     * for (int i = 1; i <= n; i++) {
+     * sum += i;
+     * }
+     * System.out.println("Sum of array is: " + sum);
+     * // return sum;
+     *
+     * }
+     * equivalent with while
+     */
+    static void sum(int n) {
+
+        int sum = 0;
+
+        int i = 0;
+        while (i <= n) {
+            sum += i;
+            i++;
+        }
+//        i-->n
+    }
+
 }
