@@ -5,19 +5,35 @@ import java.util.Scanner;
 public class Tema2 {
 
     public static void main(String[] args) {
-        ex1();
+        System.out.println("Exercitiul 1");
+        ex1(10);
 
-        ex2();
+        System.out.println("Exercitiul 2");
+        ex2(10);
 
-        ex3();
+        System.out.println("Exercitiul 3");
+        ex3(10);
 
-        ex4();
+        System.out.println("Exercitiul 4");
+        ex4(15);
 
-        ex5();
+        System.out.println("Exercitiul 5");
+        ex5(5);
 
-        ex6();
+        System.out.println("Exercitiul 6");
+        ex6(6);
 
-        ex7();
+        System.out.println("Exercitiul 7");
+        int[] sirPrime = ex7(30);
+
+        for (int i = 0; i <= sirPrime.length - 1; i++) {
+            if (sirPrime[i] == -1){
+                break;
+            }
+            System.out.print(sirPrime[i] + " ");
+        }
+        System.out.println();
+        System.out.println();
 
         ex8();
 
@@ -29,9 +45,7 @@ public class Tema2 {
 
     }
 
-    public static void ex1() {
-        System.out.println("Exercitiul 1");
-        int n = 10;
+    public static void ex1(int n) {
         for (int i = 0; i <= n - 1; i++) {
             for (int j = 0; j <= n - 1; j++) {
                 System.out.print(j + " ");
@@ -41,9 +55,7 @@ public class Tema2 {
         System.out.println();
     }
 
-    public static void ex2() {
-        System.out.println("Exercitiul 2");
-        int n = 10;
+    public static void ex2(int n) {
         for (int i = 0; i <= n - 1; i++) {
             for (int j = 0; j <= n - 1; j++) {
                 if (i == j) {
@@ -57,9 +69,7 @@ public class Tema2 {
 
     }
 
-    public static void ex3() {
-        System.out.println("Exercitiul 3");
-        int n = 10;
+    public static void ex3(int n) {
         for (int i = 0; i <= n - 1; i++) {
             for (int j = 0; j <= n - 1; j++) {
                 if (j == i + 1) {
@@ -72,9 +82,7 @@ public class Tema2 {
         }
     }
 
-    public static void ex4() {
-        System.out.println("Exercitiul 4");
-        int n = 15;
+    public static void ex4(int n) {
         for (int i = 0; i <= n - 1; i++) {
             for (int j = 0; j <= n - 1; j++) {
                 if (i + j == n - 1) {
@@ -87,9 +95,7 @@ public class Tema2 {
         }
     }
 
-    public static void ex5() {
-        System.out.println("Exercitiul 5");
-        int n = 5;
+    public static void ex5(int n) {
         for (int i = 0; i <= n; i++) {
             for (int j = 0; j < i + 1; j++) {
                 System.out.print(i);
@@ -99,9 +105,7 @@ public class Tema2 {
         System.out.println();
     }
 
-    public static void ex6() {
-        System.out.println("Exercitiul 6");
-        int n = 6;
+    public static void ex6(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < n - i; j++) {
                 System.out.print(i);
@@ -111,9 +115,7 @@ public class Tema2 {
         System.out.println();
     }
 
-    public static void ex7() {
-        System.out.println("Exercitiul 7");
-        int n = 30;
+    public static int[] ex7(int n) {
         int[] SirNumerePrime = new int[n];
         int CateNumerePrimeAmGasit = 0;
 
@@ -132,14 +134,14 @@ public class Tema2 {
                 SirNumerePrime[CateNumerePrimeAmGasit] = i;
                 CateNumerePrimeAmGasit++;
             }
+        }
+
+        SirNumerePrime[CateNumerePrimeAmGasit] = -1;
+
+        return SirNumerePrime;
 
 
-        }
-        for (int i = 0; i <= CateNumerePrimeAmGasit - 1; i++) {
-            System.out.print(SirNumerePrime[i] + " ");
-        }
-        System.out.println();
-        System.out.println();
+
 
     }
 
