@@ -2,10 +2,13 @@ package com.lseg.teme.Homework5;
 
 import java.util.Scanner;
 
+import static com.lseg.teme.Homework4.Tema4.isDivisible;
+
 public class Tema5 {
     public static void main(String[] args) {
-        ex2();
-        ex3();
+        //ex2();
+        //ex3();
+        ex4();
     }
 
     public static void ex2() {
@@ -64,5 +67,37 @@ public class Tema5 {
         return result;
     }
 
-}
+        public static void ex4() {
+            int start = 2;
+            int end = 12;
+            int divisor = 2;
 
+            System.out.println("Suma numerelor divizibile cu " + divisor + " din intervalul [" + start + "," + end + "]  este " + rangeSum(start, end, divisor));
+
+        }
+
+        public static int rangeSum(int start, int end, int divisor) {
+            if (end < start || end <= 0 || start <= 0) {
+                return -1;
+            }
+            int sum = 0;
+            int i = start;
+            while (i <= end) {
+                if (isDivisible(i, divisor)) {
+                    sum = sum + i;
+                }
+                i++;
+            }
+            return sum;
+        }
+
+        public static boolean isDivisible(int number, int divisor) {
+            if (number <= 0) {
+                return false;
+            }
+            if (number % divisor == 0) {
+                return true;
+            }
+            return false;
+        }
+    }
