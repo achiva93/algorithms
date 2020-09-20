@@ -3,6 +3,7 @@ package com.lseg.methods;
 import com.lseg.basic_structures.ForEx;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -20,7 +21,7 @@ public class Main {
 
         long sumLong = sum;
 
-        sum(2, 3);
+        sum(2, 3.5);
         sum(2, 3, 4);
         sum(2, 3, 4, 5, 6);
         sum();
@@ -28,6 +29,13 @@ public class Main {
 
         sumWithArrayArg(ints);
 //        sumWithArrayArg(2,3);
+
+        List intList = List.of(1);
+        List intList1 = List.of(1, 2);
+        List intList2 = List.of(1, 2, 3);
+
+        System.out.println("intList = " + intList2);
+
     }
 
     private static long sum(int n) {
@@ -40,20 +48,25 @@ public class Main {
         return sum;
     }
 
-//    static int sum(int a, int b) {
-//
-//        return a + b;
-//    }
-//
-//    static int sum(int a, int b, int c) {
-//
-//        return a + b + c;
-//    }
-//
-//    static int sum(int a, int b, int c, int d, int e) {
-//
-//        return a + b + c + d + e;
-//    }
+    static double sum(int a, double b) {
+
+        return a + b;
+    }
+
+    static double sum(double b, int a) {
+
+        return a + b;
+    }
+
+    static int sum(int a, int b, int c) {
+
+        return a + b + c;
+    }
+
+    static int sum(int a, int b, int c, int d, int e) {
+
+        return a + b + c + d + e;
+    }
 
     //var arg needs to be the last in the parameter list
     static int sum(int... ints) {
@@ -67,6 +80,7 @@ public class Main {
     }
 
     static int sumWithArrayArg(int[] ints) {
+
         int sum = 0;
         for (int element : ints) {
             sum += element;
@@ -74,4 +88,9 @@ public class Main {
         System.out.println("sum = " + sum);
         return sum;
     }
+
+    static void of(int... varArgs){ //Java 5
+
+    }
+
 }
