@@ -2,21 +2,32 @@ package com.lseg.classes;
 
 public class Account {
 
-    private String customerName;
+    private String customerName; //null
 
     private String iban;
 
-    private double balance;
+    double balance; //0, 0.0 sau false
 
     public Account() {
+
+        this("John Anonynous", "0000000000", 0);
+
         //this is exactly default constrcutor
         System.out.println("Default constructor called");
+//        customerName = "John Anonynous";
+//        this.iban = "0000000000";
+//        this.balance = 0.0;
     }
 
     public Account(String customerName, String iban, double balance) {
+        System.out.println("Constructor with params called");
         //add validation
         this.customerName = customerName;
         this.iban = iban;
+//        setBalance(balance);
+        if (balance < 0) {
+            throw new IllegalArgumentException("Balance should be positive");
+        }
         this.balance = balance;
     }
 
@@ -64,7 +75,9 @@ public class Account {
     }
 
     public void setBalance(double balance) {
-
+        if (balance < 0) {
+            throw new IllegalArgumentException("Balance should be positive");
+        }
         this.balance = balance;
     }
 }
